@@ -1,12 +1,18 @@
+const Hapi = require("@hapi/hapi");
 const Lab = require('@hapi/lab');
 const { expect } = require('@hapi/code');
 const { afterEach, beforeEach, describe, it } = exports.lab = Lab.script();
-const { init } = require('../lib/server');
 const mock = require("./data/assignment1");
+const routes = require("../routes/assignment1");
 
-let server;
+const server = Hapi.server({
+    port: 3003,
+    host: 'localhost'
+});
+server.route(routes);
+
 beforeEach(async () => {
-    server = await init();
+    await server.initialize();
 });
 
 afterEach(async () => {
