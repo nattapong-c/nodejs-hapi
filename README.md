@@ -1,10 +1,10 @@
 # Pomelo NodeJS Challenge
 
-####Install
+Install
 ```console
 yarn install
 ```
-####Run project
+Run project
 ```console
 yarn start
 ```
