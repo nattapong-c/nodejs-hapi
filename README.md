@@ -18,4 +18,4 @@ yarn test
 ```
 
 ### Assignment 2
-Open url [http://localhost:3000](http://localhost:3000)
+Open url [http://localhost:3000/assignment2/index.html](http://localhost:3000/assignment2/index.html)
