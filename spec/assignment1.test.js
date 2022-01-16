@@ -1,7 +1,4 @@
 const Hapi = require("@hapi/hapi");
-const Lab = require('@hapi/lab');
-const { expect } = require('@hapi/code');
-const { afterEach, beforeEach, describe, it } = exports.lab = Lab.script();
 const mock = require("./data/assignment1");
 const routes = require("../routes/assignment1");
 
@@ -27,8 +24,8 @@ describe('POST /assignment1', () => {
             method,
             url
         });
-        expect(res.statusCode).to.be.a.number(400);
-        expect(res.result.error).to.be.a.string("missing body");
+        expect(res.statusCode).toBe(400);
+        expect(res.result.error).toBe("missing body");
     });
 
     it('example 1: original example', async () => {
@@ -37,8 +34,8 @@ describe('POST /assignment1', () => {
             url,
             payload: mock.example1
         });
-        expect(res.statusCode).to.be.a.number(200);
-        expect(res.result).to.equal(mock.example1_output);
+        expect(res.statusCode).toBe(200);
+        expect(res.result).toEqual(mock.example1_output);
     });
 
     it('example 2: 1 dept -> only house', async () => {
@@ -47,8 +44,8 @@ describe('POST /assignment1', () => {
             url,
             payload: mock.example2
         });
-        expect(res.statusCode).to.be.a.number(200);
-        expect(res.result).to.equal(mock.example2_output);
+        expect(res.statusCode).toBe(200);
+        expect(res.result).toEqual(mock.example2_output);
     });
     it('example 3: 2 dept -> 2 children of house', async () => {
         const res = await server.inject({
@@ -56,8 +53,8 @@ describe('POST /assignment1', () => {
             url,
             payload: mock.example3
         });
-        expect(res.statusCode).to.be.a.number(200);
-        expect(res.result).to.equal(mock.example3_output);
+        expect(res.statusCode).toBe(200);
+        expect(res.result).toEqual(mock.example3_output);
     });
 
     it('example 4: 4 dept', async () => {
@@ -66,7 +63,7 @@ describe('POST /assignment1', () => {
             url,
             payload: mock.example4
         });
-        expect(res.statusCode).to.be.a.number(200);
-        expect(res.result).to.equal(mock.example4_output);
+        expect(res.statusCode).toBe(200);
+        expect(res.result).toEqual(mock.example4_output);
     });
 });

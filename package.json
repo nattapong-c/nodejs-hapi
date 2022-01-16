@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "test": "lab -v **/*.test.js",
-    "generate-doc": "cd spec/docs && npx insomnia-documenter --config Insomnia-export.json"
+    "test": "jest",
+    "generate-doc": "cd spec/docs && npx insomnia-documenter --config insomnia.json"
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
@@ -14,7 +14,6 @@
     "glob": "^7.2.0"
   },
   "devDependencies": {
-    "@hapi/code": "^8.0.5",
-    "@hapi/lab": "^24.5.0"
+    "jest": "^27.4.7"
   }
 }
