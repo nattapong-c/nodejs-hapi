@@ -52,3 +52,13 @@ spec/data - contain mock data for tests.
 spec/docs - contain documentation that generate from Insomnia.json.
 
 utils - contain utility functions. For example, routes.js is used to auto generate new routes in folder routes.
+
+#### Documentation
+To updated Insomnia documentation
+- Export insomnia.json from [Insomnia](https://insomnia.rest/)
+- Replace insomia.json in spec/docs
+- Run command
+```
+yarn generate-doc
+```
+
